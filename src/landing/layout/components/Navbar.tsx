@@ -33,7 +33,7 @@ export const Navbar = () => {
           <img
             src="/logoDS.png"
             alt="Deuman Solutions"
-            className="w-10 h-11 object-cover"
+            className="w-10 h-10 rounded-full object-cover"
           />
           <span
             className="text-[20px] font-bold tracking-tighter"
