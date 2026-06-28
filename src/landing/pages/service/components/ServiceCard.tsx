@@ -20,7 +20,6 @@ export function ServiceCard({
   features,
   price,
   footerIcon,
-  animationDelay = "0s",
 }: ServiceCardProps) {
   return (
     <div
@@ -37,8 +36,7 @@ export function ServiceCard({
         position: "relative",
         overflow: "hidden",
         transition:
-          "background 0.3s, border-color 0.3s, box-shadow 0.4s, transform 0.6s cubic-bezier(0.03, 0.98, 0.52, 0.99)",
-        transitionDelay: animationDelay,
+          "background 0.3s, border-color 0.3s, box-shadow 0.4s, transform 0.4s cubic-bezier(0.23,1,0.32,1)",
       }}
       onMouseEnter={(e) => {
         const el = e.currentTarget as HTMLElement;

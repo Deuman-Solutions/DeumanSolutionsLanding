@@ -19,6 +19,12 @@ export const Navbar = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  const navLinkStyle = { color: "#d0c2d5" };
+
   return (
     <nav
       className="fixed top-0 w-full z-50 backdrop-blur-xl"
@@ -29,7 +35,7 @@ export const Navbar = () => {
     >
       <div className="flex justify-between items-center px-4 md:px-16 py-4 max-w-[1280px] mx-auto">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2">
+        <Link to="/" onClick={scrollToTop} className="flex items-center gap-2">
           <img
             src="/logoDS.png"
             alt="Deuman Solutions"
@@ -45,26 +51,35 @@ export const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
-          {[
-            { label: "Services", section: "services" },
-            { label: "Projects", section: "projects" },
-            { label: "Contact", section: "contact" },
-          ].map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.section)}
-              className="text-base font-medium transition-colors"
-              style={{ color: "#d0c2d5" }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.color = "#e0b6ff")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.color = "#d0c2d5")
-              }
-            >
-              {item.label}
-            </button>
-          ))}
+          <Link
+            to="/service"
+            className="text-base font-medium transition-colors"
+            style={navLinkStyle}
+            onClick={scrollToTop}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#e0b6ff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#d0c2d5")}
+          >
+            Services
+          </Link>
+          <Link
+            to="/portafolio"
+            className="text-base font-medium transition-colors"
+            style={navLinkStyle}
+            onClick={scrollToTop}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#e0b6ff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#d0c2d5")}
+          >
+            Projects
+          </Link>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="text-base font-medium transition-colors"
+            style={navLinkStyle}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#e0b6ff")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#d0c2d5")}
+          >
+            Contact
+          </button>
           <button className="primary-gradient-btn px-6 py-2 rounded-full text-white text-base font-medium scale-95 active:scale-90 transition-transform">
             Get Started
           </button>
@@ -86,20 +101,29 @@ export const Navbar = () => {
           className="md:hidden px-4 pb-4 flex flex-col gap-4"
           style={{ background: "rgba(19,19,22,0.95)" }}
         >
-          {[
-            { label: "Services", section: "services" },
-            { label: "Projects", section: "projects" },
-            { label: "Contact", section: "contact" },
-          ].map((item) => (
-            <button
-              key={item.label}
-              onClick={() => scrollToSection(item.section)}
-              className="text-base font-medium text-left"
-              style={{ color: "#d0c2d5" }}
-            >
-              {item.label}
-            </button>
-          ))}
+          <Link
+            to="/service"
+            className="text-base font-medium text-left"
+            style={navLinkStyle}
+            onClick={() => { setMobileOpen(false); scrollToTop(); }}
+          >
+            Services
+          </Link>
+          <Link
+            to="/portafolio"
+            className="text-base font-medium text-left"
+            style={navLinkStyle}
+            onClick={() => { setMobileOpen(false); scrollToTop(); }}
+          >
+            Projects
+          </Link>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="text-base font-medium text-left"
+            style={navLinkStyle}
+          >
+            Contact
+          </button>
           <button className="primary-gradient-btn px-6 py-2 rounded-full text-white text-base font-medium w-fit">
             Get Started
           </button>

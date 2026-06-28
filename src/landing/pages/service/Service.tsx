@@ -8,8 +8,8 @@ import { useScrollReveal } from "./hooks/useScrollReveal";
 
 export const Service = () => {
   useParallaxScroll();
-  useCardTilt(".tilt-card", 50);
-  useCardTilt(".tilt-card-soft", 100);
+  useCardTilt(".tilt-card", 80);
+  useCardTilt(".tilt-card-soft", 200);
   useScrollReveal(".scroll-reveal");
 
   return (
