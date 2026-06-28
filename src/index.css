@@ -240,3 +240,56 @@
         transition: none;
     }
 }
+
+/* ─── Service Page ─────────────────────────────────────────── */
+
+/* Card mouse-glow (CSS var set via JS on mousemove) */
+.card-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle 120px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(157, 78, 221, 0.15),
+        transparent 80%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.tilt-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Scroll reveal for service page */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
+}
+
+.scroll-reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pulse dot for badges */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 0.4; }
+    50%       { opacity: 1; }
+}
+
+/* Parallax layer will-change hint */
+.parallax-layer {
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .parallax-layer   { transform: none !important; }
+    .tilt-card        { transform: none !important; transition: none; }
+    .scroll-reveal    { opacity: 1; transform: none; transition: none; }
+    .card-glow        { display: none; }
+}
