@@ -3,8 +3,8 @@ import { SectionDivider } from "./SectionDivider";
 
 const landingProjects = [
   {
-    title: "Nexus SaaS",
-    description: "Plataforma de gestión empresarial con arquitectura distribuida y escalabilidad masiva.",
+    title: "El Avellano",
+    description: "Pagina para una inmobiliaria que vende terrenos en el sur de chile.",
     image: "https://lh3.googleusercontent.com/aida-public/AB6AXuC-GNocs-AjvPyWru2Wu9vXo1IRZRzBA3VX39XOozvqyifbfoCA20wvNCGi8JsS9Siv2u4loz5PgKx5LEO2x_N0A0k-beiJzdq1Q3j1xohxpf_et1LeSn97MOaKPLP1tPbUITyLEfL-8z-IMVnWQ07DBQxD0vDViInDarFohFESkUZpBQh_Nhwb77K-gKJnWW9Rh0sKOY35mQ6H-Kk76wsJNPItMjjGxpANkOYiRIbo3SjS3jNit8C1wzVzFocAE7IhugDOskDUbZ5P",
   },
   {
