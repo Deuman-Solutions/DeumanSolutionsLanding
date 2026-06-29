@@ -1,7 +1,18 @@
 import { ArrowUpRight, Zap, Database, Globe, Gem } from "lucide-react";
+import type { ReactNode } from "react";
 import { SectionDivider } from "./SectionDivider";
 
-const ecommerceProjects = [
+interface EcommerceProject {
+  title: string;
+  description: string;
+  image: string;
+  statusColor: string;
+  statusLabel: string;
+  metaIcon: ReactNode;
+  metaLabel: string;
+}
+
+const ecommerceProjects: EcommerceProject[] = [
   {
     title: "Vanguard Fashion",
     description: "Tienda de lujo con motor de personalización basado en IA y pagos criptográficos.",
@@ -47,67 +58,59 @@ export function EcommerceSection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {ecommerceProjects.map((project) => (
           <div key={project.title} className="tilt-card scroll-reveal">
-            <div className="portafolio-card inner-glow-border p-8 rounded-xl flex flex-col md:flex-row gap-8 group">
+            <div className="portafolio-card inner-glow-border rounded-xl overflow-hidden group relative">
               <div className="card-glow" />
-              <div className="relative z-10 flex flex-col ">
-                {/* Image */}
-                <div
-                className="md:w-1/2 aspect-video rounded-lg overflow-hidden border shrink-0"
+              {/* Image — full width top */}
+              <div
+                className="w-full aspect-video overflow-hidden border-b relative z-10"
                 style={{
                   background: "rgba(27,27,30,1)",
                   borderColor: "rgba(255,255,255,0.05)",
                 }}
-                >
+              >
                 <div
                   className="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                   style={{ backgroundImage: `url('${project.image}')` }}
                 />
+              </div>
+              {/* Content — below image */}
+              <div className="relative z-10 p-8 flex flex-col">
+                <div className="flex justify-between items-start mb-4">
+                  <span
+                    className="px-3 py-1 rounded-full text-[12px] font-medium border"
+                    style={{
+                      background: "rgba(155,83,210,0.2)",
+                      color: "#e1b6ff",
+                      borderColor: "rgba(225,182,255,0.2)",
+                    }}
+                  >
+                    E-commerce
+                  </span>
+                  <ArrowUpRight
+                    size={20}
+                    className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    style={{ color: "#e0b6ff" }}
+                  />
                 </div>
-                {/* Content */}
-                <div className="md:w-1/2 flex flex-col justify-center">
-                  <div className="flex justify-between items-start mb-4">
+                <h3 className="text-[20px] font-medium mb-2" style={{ color: "#e4e1e6" }}>
+                  {project.title}
+                </h3>
+                <p className="text-base leading-relaxed mb-6" style={{ color: "#d0c2d5" }}>
+                  {project.description}
+                </p>
+                <div className="flex gap-4 items-center">
+                  <div className="flex items-center gap-2">
                     <span
-                      className="px-3 py-1 rounded-full text-[12px] font-medium border"
-                      style={{
-                        background: "rgba(155,83,210,0.2)",
-                        color: "#e1b6ff",
-                        borderColor: "rgba(225,182,255,0.2)",
-                      }}
-                    >
-                      E-commerce
-                    </span>
-                    <ArrowUpRight
-                      size={20}
-                      className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                      style={{ color: "#e0b6ff" }}
+                      className="w-2 h-2 rounded-full status-dot"
+                      style={{ background: project.statusColor }}
                     />
+                    <span className="text-[12px]" style={{ color: "#d0c2d5" }}>
+                      {project.statusLabel}
+                    </span>
                   </div>
-                  <h3
-                    className="text-[20px] font-medium mb-2"
-                    style={{ color: "#e4e1e6" }}
-                  >
-                    {project.title}
-                  </h3>
-                  <p
-                    className="text-base leading-relaxed mb-6"
-                    style={{ color: "#d0c2d5" }}
-                  >
-                    {project.description}
-                  </p>
-                  <div className="flex gap-4 items-center">
-                    <div className="flex items-center gap-2">
-                      <span
-                        className="w-2 h-2 rounded-full status-dot"
-                        style={{ background: project.statusColor }}
-                      />
-                      <span className="text-[12px]" style={{ color: "#d0c2d5" }}>
-                        {project.statusLabel}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5" style={{ color: "#d0c2d5" }}>
-                      {project.metaIcon}
-                      <span className="text-[12px]">{project.metaLabel}</span>
-                    </div>
+                  <div className="flex items-center gap-1.5" style={{ color: "#d0c2d5" }}>
+                    {project.metaIcon}
+                    <span className="text-[12px]">{project.metaLabel}</span>
                   </div>
                 </div>
               </div>
