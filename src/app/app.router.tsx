@@ -1,11 +1,11 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { RouterProvider, createHashRouter } from "react-router";
 import { DeumanLayout } from "../landing/layout/DeumanLayout";
 import { Home } from "../landing/pages/Home/Home";
 import { Service } from "../landing/pages/service/Service";
 import { Portafolio } from "../landing/pages/portafolio/Portafolio";
 
 
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <DeumanLayout/>,
