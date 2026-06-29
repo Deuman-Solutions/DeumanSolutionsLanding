@@ -1,11 +1,11 @@
 import { useParticles } from "../../hooks";
 
-export function ParticleCanvas() {
-  useParticles("service-particle-canvas");
+export function PortafolioParticleCanvas() {
+  useParticles("portafolio-particle-canvas");
 
   return (
     <canvas
-      id="service-particle-canvas"
+      id="portafolio-particle-canvas"
       className="parallax-layer"
       data-speed="0.4"
       style={{

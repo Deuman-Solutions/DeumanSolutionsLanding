@@ -1,10 +1,6 @@
-import { ParticleCanvas } from "./components/ParticleCanvas";
-import { ServiceHero } from "./components/ServiceHero";
-import { ServicesGrid } from "./components/ServicesGrid";
-import { ServiceCTA } from "./components/ServiceCTA";
-import { useParallaxScroll } from "./hooks/useParallaxScroll";
-import { useCardTilt } from "./hooks/useCardTilt";
-import { useScrollReveal } from "./hooks/useScrollReveal";
+import { useCardTilt, useParallaxScroll, useScrollReveal } from "../hooks";
+import { ParticleCanvas, ServiceCTA, ServiceHero, ServicesGrid } from "./components";
+
 
 export const Service = () => {
   useParallaxScroll();
