@@ -7,12 +7,10 @@ import './index.css'
 Sentry.init({
   dsn: "https://4030d5181a76c791dd8e3103810ea1f1@o4511667856474112.ingest.us.sentry.io/4511667865321472",
   dataCollection: {
-    // To disable sending user data and HTTP bodies, uncomment the lines below. For more info visit:
-    // https://docs.sentry.io/platforms/javascript/guides/react/configuration/options/#dataCollection
-    // userInfo: false,
-    // httpBodies: []
+   
   },
   integrations: [
+    Sentry.consoleLoggingIntegration({ levels: ["log", "warn", "error"] }),
     Sentry.browserTracingIntegration(),
     Sentry.replayIntegration()
   ],
