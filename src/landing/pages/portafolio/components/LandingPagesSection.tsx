@@ -16,10 +16,10 @@ const landingProjects: LandingProject[] = [
     url: "https://www.elavellano.cl/",
   },
   {
-    title: "Proyecto 2",
-    description: "Descripción del proyecto próximamente.",
-    image: "/Landing-placeholder1.png",
-    url: null,
+    title: "Menu Restaurant",
+    description: "Página web para un restaurante con menú interactivo.",
+    image: "/Landing-menurestaurant.png",
+    url: "https://menurestaurant.deumansolutions.cl/",
   },
   {
     title: "Proyecto 3",
