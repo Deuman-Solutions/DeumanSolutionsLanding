@@ -9,13 +9,13 @@ const services = [
     description:
       "Diseñamos interfaces optimizadas para la conversión, enfocándonos en la experiencia de usuario y la velocidad de carga mediante arquitectura de micro-interacciones.",
     features: [
-      "Hosting incluido premium",
+      "Hosting gratuito incluido",
       "Dominio personalizado SSL",
       "Mantenimiento preventivo",
-      "Optimización SEO técnica",
+      "correos corporativos incluidos",
       "Diseño responsivo adaptativo",
     ],
-    price: "Desde $299",
+    price: "Desde $99.990",
     footerIcon: <Zap size={22} />,
     animationDelay: "0.1s",
   },
@@ -26,7 +26,7 @@ const services = [
     description:
       "Plataformas de venta escalables y robustas integradas con sistemas de pago seguros y logística eficiente, diseñadas para altos volúmenes de tráfico.",
     features: [
-      "Hosting de alto rendimiento",
+      "Hosting gratuito incluido",
       "Desarrollo de Base de Datos SQL",
       "Integración de APIs bancarias",
       "Dashboard de gestión ERP",
