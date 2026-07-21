@@ -22,10 +22,10 @@ const landingProjects: LandingProject[] = [
     url: "https://menurestaurant.deumansolutions.cl/",
   },
   {
-    title: "Proyecto 3",
-    description: "Descripción del proyecto próximamente.",
-    image: "/Landing-placeholder2.png",
-    url: null,
+    title: "Clinica Dental",
+    description: "Página web para una clínica dental con servicios modernos.",
+    image: "/Landing-ClinicaDental.png",
+    url: "https://clinica-dental.deumansolutions.cl/",
   },
   {
     title: "Proyecto 4",
